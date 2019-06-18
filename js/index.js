@@ -11,7 +11,7 @@ const siteContent = {
 
   
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM <br> Is <br> Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -41,49 +41,70 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.src = "img/logo.png";
+logo.src = siteContent["nav"]["img-src"];
 
 let mainImage = document.getElementById("cta-img");
-mainImage.src = "img/header-img.png";
+mainImage.src = siteContent["cta"]["img-src"];
 
 let mainText = document.querySelector("h1");
-mainText.textContent = "Jerry is Awesome";
+mainText.innerHTML = siteContent["cta"]["h1"];
 
 let button = document.querySelector("button");
-button.textContent = "Get Started";
+button.textContent = siteContent["cta"]["button"];
 
 let hyperlinks = document.querySelectorAll("a");
-hyperlinks[0].textContent = "Services";
-hyperlinks[1].textContent = "Product";
-hyperlinks[2].textContent = "Vision";
-hyperlinks[3].textContent = "Features";
-hyperlinks[4].textContent = "About";
-hyperlinks[5].textContent = "Contact";
+hyperlinks[0].textContent = siteContent["nav"]["nav-item-1"];
+hyperlinks[1].textContent = siteContent["nav"]["nav-item-2"];
+hyperlinks[2].textContent = siteContent["nav"]["nav-item-3"];
+hyperlinks[3].textContent = siteContent["nav"]["nav-item-4"];
+hyperlinks[4].textContent = siteContent["nav"]["nav-item-5"];
+hyperlinks[5].textContent = siteContent["nav"]["nav-item-6"];
 
+let hyperlinksColor = document.querySelectorAll("a");
+hyperlinks[0].style.color = "green";
+hyperlinks[1].style.color = "green";
+hyperlinks[2].style.color = "green";
+hyperlinks[3].style.color = "green";
+hyperlinks[4].style.color = "green";
+hyperlinks[5].style.color = "green";
+
+
+let nav = document.querySelector("nav");
+nav.style.color = "green";
+
+let first = document.createElement("First");
+first.textContent = "First";
+first.style.fontSize = "1rem";
+nav.append(first);
+
+let last = document.createElement("Last");
+last.textContent = "Last";
+last.style.fontSize = "1rem";
+nav.prepend(last);
 
 let bottomFirstRow = document.getElementById("middle-img");
-bottomFirstRow.src = "img/mid-page-accent.jpg";
+bottomFirstRow.src = siteContent["main-content"]["middle-img-src"]
 
 let h4 = document.querySelectorAll("h4");
-h4[0].textContent = "Features";
-h4[1].textContent = "About";
-h4[2].textContent = "Services";
-h4[3].textContent = "Product";
-h4[4].textContent = "Vision";
-h4[5].textContent = "Contact";
+h4[0].textContent = siteContent["main-content"]["features-h4"];
+h4[1].textContent = siteContent["main-content"]["about-h4"];
+h4[2].textContent = siteContent["main-content"]["services-h4"];
+h4[3].textContent = siteContent["main-content"]["product-h4"];
+h4[4].textContent = siteContent["main-content"]["vision-h4"];
+h4[5].textContent = siteContent["contact"]["contact-h4"];
 
 let paragraphs = document.getElementsByTagName ("p");
-paragraphs[0].textContent = "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
-paragraphs[1].textContent = "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
-paragraphs[2].textContent = "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
-paragraphs[3].textContent = "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
-paragraphs[4].textContent = "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
-
+paragraphs[0].textContent = siteContent["main-content"]["features-content"];
+paragraphs[1].textContent = siteContent["main-content"]["about-content"];
+paragraphs[2].textContent = siteContent["main-content"]["services-content"];
+paragraphs[3].textContent = siteContent["main-content"]["product-content"];
+paragraphs[4].textContent = siteContent["main-content"]["vision-content"];
 
 let info = document.getElementsByTagName ("p");
-info[5].textContent = "123 Way 456 Street Somewhere, USA";
-info[6].textContent = "1 (888) 888-8888";
-info[7].textContent = "sales@greatidea.io";
-info[8].textContent = "Copyright Great Idea! 2018";
+info[5].textContent = siteContent["contact"]["address"];
+info[6].textContent = siteContent["contact"]["phone"];
+info[7].textContent = siteContent["contact"]["email"];
+info[8].textContent = siteContent["footer"]["copyright"];
+
 
 
