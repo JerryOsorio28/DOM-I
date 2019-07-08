@@ -43,6 +43,10 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.src = siteContent["nav"]["img-src"];
 
+logo.addEventListener('click', () => {
+  logo.src = 'img/logolightup.png' 
+})
+
 let mainImage = document.getElementById("cta-img");
 mainImage.src = siteContent["cta"]["img-src"];
 
@@ -75,12 +79,13 @@ nav.style.color = "green";
 let first = document.createElement("First");
 first.textContent = "First";
 first.style.fontSize = "1rem";
-nav.append(first);
+nav.prepend(first);
+
 
 let last = document.createElement("Last");
 last.textContent = "Last";
 last.style.fontSize = "1rem";
-nav.prepend(last);
+nav.append(last);
 
 let bottomFirstRow = document.getElementById("middle-img");
 bottomFirstRow.src = siteContent["main-content"]["middle-img-src"]
