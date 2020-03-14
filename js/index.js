@@ -8,8 +8,10 @@ const siteContent = {
     "nav-item-6": "Contact",
     "img-src": "img/logo.png"
   },
+
+  
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM <br> Is <br> Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -39,4 +41,75 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.src = siteContent["nav"]["img-src"];
+
+logo.addEventListener('click', () => {
+  logo.src = 'img/logolightup.png' 
+})
+
+let mainImage = document.getElementById("cta-img");
+mainImage.src = siteContent["cta"]["img-src"];
+
+let mainText = document.querySelector("h1");
+mainText.innerHTML = siteContent["cta"]["h1"];
+
+let button = document.querySelector("button");
+button.textContent = siteContent["cta"]["button"];
+
+let hyperlinks = document.querySelectorAll("a");
+hyperlinks[0].textContent = siteContent["nav"]["nav-item-1"];
+hyperlinks[1].textContent = siteContent["nav"]["nav-item-2"];
+hyperlinks[2].textContent = siteContent["nav"]["nav-item-3"];
+hyperlinks[3].textContent = siteContent["nav"]["nav-item-4"];
+hyperlinks[4].textContent = siteContent["nav"]["nav-item-5"];
+hyperlinks[5].textContent = siteContent["nav"]["nav-item-6"];
+
+let hyperlinksColor = document.querySelectorAll("a");
+hyperlinks[0].style.color = "green";
+hyperlinks[1].style.color = "green";
+hyperlinks[2].style.color = "green";
+hyperlinks[3].style.color = "green";
+hyperlinks[4].style.color = "green";
+hyperlinks[5].style.color = "green";
+
+
+let nav = document.querySelector("nav");
+nav.style.color = "green";
+
+let first = document.createElement("First");
+first.textContent = "First";
+first.style.fontSize = "1rem";
+nav.prepend(first);
+
+
+let last = document.createElement("Last");
+last.textContent = "Last";
+last.style.fontSize = "1rem";
+nav.append(last);
+
+let bottomFirstRow = document.getElementById("middle-img");
+bottomFirstRow.src = siteContent["main-content"]["middle-img-src"]
+
+let h4 = document.querySelectorAll("h4");
+h4[0].textContent = siteContent["main-content"]["features-h4"];
+h4[1].textContent = siteContent["main-content"]["about-h4"];
+h4[2].textContent = siteContent["main-content"]["services-h4"];
+h4[3].textContent = siteContent["main-content"]["product-h4"];
+h4[4].textContent = siteContent["main-content"]["vision-h4"];
+h4[5].textContent = siteContent["contact"]["contact-h4"];
+
+let paragraphs = document.getElementsByTagName ("p");
+paragraphs[0].textContent = siteContent["main-content"]["features-content"];
+paragraphs[1].textContent = siteContent["main-content"]["about-content"];
+paragraphs[2].textContent = siteContent["main-content"]["services-content"];
+paragraphs[3].textContent = siteContent["main-content"]["product-content"];
+paragraphs[4].textContent = siteContent["main-content"]["vision-content"];
+
+let info = document.getElementsByTagName ("p");
+info[5].textContent = siteContent["contact"]["address"];
+info[6].textContent = siteContent["contact"]["phone"];
+info[7].textContent = siteContent["contact"]["email"];
+info[8].textContent = siteContent["footer"]["copyright"];
+
+
+
